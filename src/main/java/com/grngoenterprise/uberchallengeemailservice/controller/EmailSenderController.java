@@ -25,10 +25,9 @@ public class EmailSenderController {
     public ResponseEntity<String> sendEmail(@RequestBody EmailRequest request){
         try {
             this.emailSenderService.sendEmail(request.to(), request.subject(), request.body());
-            return ResponseEntity.ok("Pombo departured succesful");
+            return ResponseEntity.ok("Pombo departured successful");
         } catch(EmailServiceException exception){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Pombo intercepted");
         }
     }
-
 }
