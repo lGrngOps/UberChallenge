@@ -21,7 +21,7 @@ public class EmailSenderController {
         this.emailSenderService = emailService;
     }
 
-    @PostMapping()
+    @PostMapping("/send")
     public ResponseEntity<String> sendEmail(@RequestBody EmailRequest request){
         try {
             this.emailSenderService.sendEmail(request.to(), request.subject(), request.body());
